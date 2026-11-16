@@ -57,6 +57,36 @@ The screenshot was captured from official DSH `0.1.1-rc.2` with the Codex and
 Claude plugins installed. If you install only this plugin, only **Codex** is
 added.
 
+### Local DSH desktop `0.2.2-rc.3` setup
+
+The current checkout also supports the DSH Mac desktop app `0.2.2-rc.3`.
+Install this checkout into its `desktop` profile with the CLI bundled in the app:
+
+```bash
+'/Applications/DeepSeek Harness.app/Contents/Resources/runtime/cli/bin/dsh' plugin --profile desktop add file:/absolute/path/to/relay-dsh-plugin-codex
+```
+
+Restart DSH after installing. Sign in to the official Codex app or run
+`codex login` with ChatGPT before sending a DSH message. The relay uses that
+local Codex authentication; it does not require an OpenAI API key. Select a
+model in DSH's **Codex** provider group. If you want only the relay route, set
+the DSH default model provider to `relay-codex` and do not configure DSH's
+separate `openai-codex` provider.
+
+The **Codex** entry in DSH's mode menu is a dedicated preset. You can also
+select **Standard**, **PTC**, **Minimal**, or **Creator** and choose a Codex
+relay model. New relay threads receive that preset's system prompt and DSH
+tools. Choose the intended mode when starting a new session: a Codex thread
+keeps the instructions it started with if you later switch modes in the same
+DSH session.
+
+Each DSH session maps to one persistent Codex thread under the same local
+Codex home. The Codex Mac app can open that thread, and DSH can continue it.
+Avoid sending turns from both apps at the same time. DSH imports newer Codex
+turns when an imported session is opened; it does not synchronize an already
+open conversation live. DSH desktop's own sign-in gate is separate from Codex
+authentication and remains a host-app requirement.
+
 [Watch Plugin Manager find and install this package in 40 seconds](https://github.com/yangbobo2021/Relay/blob/codex/relay-foundation/docs/media/dsh-plugin-manager-codex-install-demo.en.mp4?raw=1)
 · [review all Relay DSH plugins](https://github.com/yangbobo2021/Relay/blob/codex/relay-foundation/docs/dsh-plugins.md)
 
