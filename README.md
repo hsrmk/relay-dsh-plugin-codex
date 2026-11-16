@@ -66,7 +66,9 @@ Install this checkout into its `desktop` profile with the CLI bundled in the app
 '/Applications/DeepSeek Harness.app/Contents/Resources/runtime/cli/bin/dsh' plugin --profile desktop add file:/absolute/path/to/relay-dsh-plugin-codex
 ```
 
-Restart DSH after installing. Sign in to the official Codex app or run
+Restart DSH after installing. If DSH opens a welcome screen, choose **Add API
+Key** and then **Set up later**; no DeepSeek key is needed for relay-only use.
+Sign in to the official Codex app or run
 `codex login` with ChatGPT before sending a DSH message. The relay uses that
 local Codex authentication; it does not require an OpenAI API key. Select a
 model in DSH's **Codex** provider group. If you want only the relay route, set
@@ -84,8 +86,7 @@ Each DSH session maps to one persistent Codex thread under the same local
 Codex home. The Codex Mac app can open that thread, and DSH can continue it.
 Avoid sending turns from both apps at the same time. DSH imports newer Codex
 turns when an imported session is opened; it does not synchronize an already
-open conversation live. DSH desktop's own sign-in gate is separate from Codex
-authentication and remains a host-app requirement.
+open conversation live.
 
 [Watch Plugin Manager find and install this package in 40 seconds](https://github.com/yangbobo2021/Relay/blob/codex/relay-foundation/docs/media/dsh-plugin-manager-codex-install-demo.en.mp4?raw=1)
 · [review all Relay DSH plugins](https://github.com/yangbobo2021/Relay/blob/codex/relay-foundation/docs/dsh-plugins.md)
